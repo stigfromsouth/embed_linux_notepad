@@ -246,11 +246,11 @@ solution for a couple of reasons:
   socket protocol and the broadcast manager (BCM). So to open a socket,
   you would write
 
-    `s = socket(PF_CAN, SOCK_RAW, CAN_RAW);`
+    s = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 
   and
 
-    `s = socket(PF_CAN, SOCK_DGRAM, CAN_BCM);`
+    s = socket(PF_CAN, SOCK_DGRAM, CAN_BCM);
 
   respectively.  After the successful creation of the socket, you would
   normally use the bind(2) system call to bind the socket to a CAN
@@ -474,7 +474,7 @@ solution for a couple of reasons:
 
   A filter matches, when
 
-    `<received_can_id> & mask == can_id & mask`
+    <received_can_id> & mask == can_id & mask
 
   which is analogous to known CAN controllers hardware filter semantics.
   The filter can be inverted in this semantic, when the CAN_INV_FILTER
@@ -495,7 +495,7 @@ solution for a couple of reasons:
   
   To disable the reception of CAN frames on the selected CAN_RAW socket:
 
-    `setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, NULL, 0);`
+    setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, NULL, 0);
 
   To set the filters to zero filters is quite obsolete as to not read
   data causes the raw socket to discard the received CAN frames. But
@@ -1256,20 +1256,20 @@ solution for a couple of reasons:
   you *must* define proper bit-timing parameters for real CAN devices
   before you can start it to avoid error-prone default settings:
 
-    `$ ip link set canX up type can bitrate 125000`
+    $ ip link set canX up type can bitrate 125000
 
   A device may enter the "bus-off" state if too many errors occurred on
   the CAN bus. Then no more messages are received or sent. An automatic
   bus-off recovery can be enabled by setting the "restart-ms" to a
   non-zero value, e.g.:
 
-    `$ ip link set canX type can restart-ms 100`
+    $ ip link set canX type can restart-ms 100
 
   Alternatively, the application may realize the "bus-off" condition
   by monitoring CAN error message frames and do a restart when
   appropriate with the command:
 
-    `$ ip link set canX type can restart`
+    $ ip link set canX type can restart
 
   Note that a restart will also create a CAN error message frame (see
   also chapter 3.3).
@@ -1370,22 +1370,40 @@ solution for a couple of reasons:
 ----------
 
   Oliver Hartkopp (PF_CAN core, filters, drivers, bcm, SJA1000 driver)
+  
   Urs Thuermann (PF_CAN core, kernel integration, socket interfaces, raw, vcan)
+  
   Jan Kizka (RT-SocketCAN core, Socket-API reconciliation)
+  
   Wolfgang Grandegger (RT-SocketCAN core & drivers, Raw Socket-API reviews,
                        CAN device driver interface, MSCAN driver)
+  
   Robert Schwebel (design reviews, PTXdist integration)
+  
   Marc Kleine-Budde (design reviews, Kernel 2.6 cleanups, drivers)
+  
   Benedikt Spranger (reviews)
+  
   Thomas Gleixner (LKML reviews, coding style, posting hints)
+  
   Andrey Volkov (kernel subtree structure, ioctls, MSCAN driver)
+  
   Matthias Brukner (first SJA1000 CAN netdevice implementation Q2/2003)
+  
   Klaus Hitschler (PEAK driver integration)
+  
   Uwe Koppe (CAN netdevices with PF_PACKET approach)
+  
   Michael Schulze (driver layer loopback requirement, RT CAN drivers review)
+  
   Pavel Pisa (Bit-timing calculation)
+  
   Sascha Hauer (SJA1000 platform driver)
+  
   Sebastian Haas (SJA1000 EMS PCI driver)
+  
   Markus Plessing (SJA1000 EMS PCI driver)
+  
   Per Dalen (SJA1000 Kvaser PCI driver)
+  
   Sam Ravnborg (reviews, coding style, kbuild help)
