@@ -9,45 +9,79 @@
   2 Motivation / Why using the socket API
 
   3 SocketCAN concept
+    
     3.1 receive lists
+    
     3.2 local loopback of sent frames
+    
     3.3 network problem notifications
 
   4 How to use SocketCAN
+    
     4.1 RAW protocol sockets with can_filters (SOCK_RAW)
+      
       4.1.1 RAW socket option CAN_RAW_FILTER
+      
       4.1.2 RAW socket option CAN_RAW_ERR_FILTER
+      
       4.1.3 RAW socket option CAN_RAW_LOOPBACK
+      
       4.1.4 RAW socket option CAN_RAW_RECV_OWN_MSGS
+      
       4.1.5 RAW socket option CAN_RAW_FD_FRAMES
+      
       4.1.6 RAW socket option CAN_RAW_JOIN_FILTERS
+      
       4.1.7 RAW socket returned message flags
+    
     4.2 Broadcast Manager protocol sockets (SOCK_DGRAM)
+      
       4.2.1 Broadcast Manager operations
+      
       4.2.2 Broadcast Manager message flags
+      
       4.2.3 Broadcast Manager transmission timers
+      
       4.2.4 Broadcast Manager message sequence transmission
+      
       4.2.5 Broadcast Manager receive filter timers
+      
       4.2.6 Broadcast Manager multiplex message receive filter
+      
       4.2.7 Broadcast Manager CAN FD support
+    
     4.3 connected transport protocols (SOCK_SEQPACKET)
+    
     4.4 unconnected transport protocols (SOCK_DGRAM)
 
   5 SocketCAN core module
+    
     5.1 can.ko module params
+    
     5.2 procfs content
+    
     5.3 writing own CAN protocol modules
 
   6 CAN network drivers
+    
     6.1 general settings
+    
     6.2 local loopback of sent frames
+    
     6.3 CAN controller hardware filters
+    
     6.4 The virtual CAN driver (vcan)
+    
     6.5 The CAN network device driver interface
+      
       6.5.1 Netlink interface to set/get devices properties
+      
       6.5.2 Setting the CAN bit-timing
+      
       6.5.3 Starting and stopping the CAN network device
+    
     6.6 CAN FD (flexible data rate) driver support
+    
     6.7 supported CAN hardware
 
   7 SocketCAN resources
