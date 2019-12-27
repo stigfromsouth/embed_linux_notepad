@@ -2,7 +2,7 @@
 # Readme file for the Controller Area Network Protocol Family (aka SocketCAN)
 
 ### This file contains
----
+
 ```
   1 Overview / What is SocketCAN
 
@@ -54,10 +54,8 @@
 
   8 Credits
 ```
----
 
 ## 1. Overview / What is SocketCAN
---------------------------------
 
 The socketcan package is an implementation of CAN protocols
 (Controller Area Network) for Linux.  CAN is a networking technology
@@ -71,7 +69,6 @@ familiar with network programming, to easily learn how to use CAN
 sockets.
 
 ## 2. Motivation / Why using the socket API
-----------------------------------------
 
 There have been CAN implementations for Linux before SocketCAN so the
 question arises, why we have started another project.  Most existing
@@ -151,7 +148,6 @@ solution for a couple of reasons:
   natural and most appropriate way to implement CAN for Linux.
 
 ## 3. SocketCAN concept
----------------------
 
   As described in chapter 2 it is the main goal of SocketCAN to
   provide a socket interface to user space applications which builds
@@ -237,7 +233,6 @@ solution for a couple of reasons:
   described in the Linux header file "include/uapi/linux/can/error.h".
 
 ## 4. How to use SocketCAN
-------------------------
 
   Like TCP/IP, you first need to open a socket for communicating over a
   CAN network. Since SocketCAN implements a new protocol family, you
@@ -263,6 +258,7 @@ solution for a couple of reasons:
 
   The basic CAN frame structure and the sockaddr structure are defined
   in include/linux/can.h:
+
 ```
     struct can_frame {
             canid_t can_id;  /* 32 bit CAN_ID + EFF/RTR/ERR flags */
@@ -934,9 +930,7 @@ solution for a couple of reasons:
   4.3 connected transport protocols (SOCK_SEQPACKET)
   4.4 unconnected transport protocols (SOCK_DGRAM)
 
-
-## 5. SocketCAN core module
--------------------------
+  ## 5. SocketCAN core module
 
   The SocketCAN core module implements the protocol family
   PF_CAN. CAN protocol modules are loaded by the core module at
@@ -1010,8 +1004,7 @@ solution for a couple of reasons:
   For details see the kerneldoc documentation in net/can/af_can.c or
   the source code of net/can/raw.c or net/can/bcm.c .
 
-## 6. CAN network drivers
-----------------------
+  ## 6. CAN network drivers
 
   Writing a CAN network device driver is much easier than writing a
   CAN character device driver. Similar to other known network device
@@ -1233,7 +1226,7 @@ solution for a couple of reasons:
   recommended CAN bit-timing parameters will be calculated if the bit-
   rate is specified with the argument "bitrate":
 
-    `$ ip link set canX type can bitrate 125000`
+    $ ip link set canX type can bitrate 125000
 
   Note that this works fine for the most common CAN controllers with
   standard bit-rates but may *fail* for exotic bit-rates or CAN system
@@ -1360,14 +1353,12 @@ solution for a couple of reasons:
   older kernel versions.
 
 ## 7. SocketCAN resources
------------------------
 
   The Linux CAN / SocketCAN project resources (project site / mailing list)
   are referenced in the MAINTAINERS file in the Linux source tree.
   Search for CAN NETWORK [LAYERS|DRIVERS].
 
 ## 8. Credits
-----------
 
   Oliver Hartkopp (PF_CAN core, filters, drivers, bcm, SJA1000 driver)
   
