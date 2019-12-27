@@ -3,7 +3,7 @@
 
 ### This file contains
 
-```
+
   1 Overview / What is SocketCAN
 
   2 Motivation / Why using the socket API
@@ -53,7 +53,7 @@
   7 SocketCAN resources
 
   8 Credits
-```
+
 
 ## 1. Overview / What is SocketCAN
 
