@@ -4,7 +4,7 @@
 ### This file contains
 
 
-  1 [Overview / What is SocketCAN](##1. Overview / What is SocketCAN)
+  1 Overview / What is SocketCAN
 
   2 Motivation / Why using the socket API
 
@@ -378,7 +378,7 @@ solution for a couple of reasons:
 
   Writing CAN frames can be done similarly, with the write(2) system call:
 
-    `nbytes = write(s, &frame, sizeof(struct can_frame));`
+    nbytes = write(s, &frame, sizeof(struct can_frame));
 
   When the CAN interface is bound to 'any' existing CAN interface
   (addr.can_ifindex = 0) it is recommended to use recvfrom(2) if the
@@ -1073,7 +1073,7 @@ solution for a couple of reasons:
   set to prevent the PF_CAN core from locally echoing sent frames
   (aka loopback) as fallback solution:
 
-    `dev->flags = (IFF_NOARP | IFF_ECHO);`
+    dev->flags = (IFF_NOARP | IFF_ECHO);
 
   ### 6.3 CAN controller hardware filters
 
